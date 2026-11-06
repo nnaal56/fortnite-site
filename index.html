@@ -26,30 +26,31 @@
         .banner {
             width: 100%;
             max-width: 900px;
-            height: 250px;
+            height: 220px;
             background: linear-gradient(135deg, #1f2833, #0b0c10);
             border: 2px solid #45a29e;
             border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 20px rgba(69, 162, 158, 0.3);
+            box-shadow: 0 0 25px rgba(102, 252, 241, 0.2);
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .banner h1 {
             color: #66fcf1;
-            font-size: 2.5rem;
-            text-shadow: 0 0 10px #66fcf1;
+            font-size: 2.2rem;
+            text-shadow: 0 0 15px #66fcf1;
+            text-align: center;
         }
 
-        /* صورة البروفايل */
+        /* صورة البروفايل / الشعار */
         .profile-avatar {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             background: #1f2833;
-            border: 4px solid #66fcf1;
+            border: 3px solid #66fcf1;
             border-radius: 50%;
             position: absolute;
             bottom: -40px;
@@ -57,8 +58,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 3rem;
-            box-shadow: 0 0 15px #66fcf1;
+            overflow: hidden;
+            box-shadow: 0 0 20px #66fcf1;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* معلومات الهوية */
@@ -70,6 +77,7 @@
             border-radius: 12px;
             border-right: 5px solid #66fcf1;
             margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .bio-card h2 {
@@ -80,59 +88,124 @@
         .bio-card p {
             color: #c5c6c7;
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        /* قالب المعاينة */
-        .preview-box {
+        /* أزرار وسائل التواصل */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: transparent;
+            color: #66fcf1;
+            border: 1px solid #66fcf1;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #66fcf1;
+            color: #0b0c10;
+            box-shadow: 0 0 12px #66fcf1;
+        }
+
+        /* قالب التسريب المعاين */
+        .leak-card {
             width: 100%;
             max-width: 500px;
-            height: 500px;
-            border: 2px dashed #45a29e;
+            background: #1f2833;
+            border: 2px solid #45a29e;
             border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(69, 162, 158, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .leak-header {
+            background: #45a29e;
+            color: #0b0c10;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .leak-image-container {
+            width: 100%;
+            height: 350px;
+            background: #0b0c10;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px;
-            background: rgba(31, 40, 51, 0.5);
             position: relative;
         }
 
-        .preview-header {
-            background: #45a29e;
-            color: #0b0c10;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
+        .leak-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .watermark {
-            align-self: flex-start;
-            color: rgba(102, 252, 241, 0.5);
-            font-size: 1.2rem;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: rgba(102, 252, 241, 0.7);
+            font-size: 1rem;
             font-weight: bold;
+            text-shadow: 0 0 5px #000;
+        }
+
+        .leak-footer {
+            padding: 15px;
+            color: #c5c6c7;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            background: rgba(11, 12, 16, 0.6);
         }
     </style>
 </head>
 <body>
 
-    <!-- غلاف الحساب -->
+    <!-- غلاف الحساب والشعار -->
     <div class="banner">
-        <h1>رصد وتغطية التحديثات</h1>
-        <div class="profile-avatar">❓</div>
+        <h1>رصد وتغطية تسريبات فورت نايت</h1>
+        <div class="profile-avatar">
+            <!-- استبدل رابط الصورة أدناه برابط شعارك الخاص -->
+            <img src="https://via.placeholder.com/150/1f2833/66fcf1?text=FN_Secrets" alt="FN_Secrets Logo">
+        </div>
     </div>
 
-    <!-- النبذة والهوية -->
+    <!-- النبذة والروابط -->
     <div class="bio-card">
         <h2>FN_Secrets | أسرار فورت نايت</h2>
         <p>🔓 بوابتك الأولى لكل جديد في فورت نايت.<br>تسريبات، ملفات التحديثات، وكل ما هو مخفي أول بأول ⚡</p>
+        
+        <div class="social-links">
+            <a href="#" class="social-btn" target="_blank">تويتر / X</a>
+            <a href="#" class="social-btn" target="_blank">ديسكورد</a>
+            <a href="#" class="social-btn" target="_blank">تيك توك</a>
+        </div>
     </div>
 
-    <!-- قالب المعاينة للنشر -->
-    <div class="preview-box">
-        <div class="preview-header">جديد! [اسم السكن]</div>
-        <p style="color: #45a29e;">[ضع صورة السكن المستخرجة من FModel هنا]</p>
-        <div class="watermark">@FN_Secrets</div>
+    <!-- بطاقة عرض التسريب -->
+    <div class="leak-card">
+        <div class="leak-header">تسريب جديد ⚡</div>
+        <div class="leak-image-container">
+            <!-- ضع رابط صورة السكن بدلاً من هذا الرابط -->
+            <img src="https://via.placeholder.com/500x500/0b0c10/66fcf1?text=صورة+السكن+هنا" alt="Leaked Skin">
+            <div class="watermark">@FN_Secrets</div>
+        </div>
+        <div class="leak-footer">
+            <p><strong>تفاصيل التسريب:</strong> سكن جديد مضاف في ملفات التحديث الأخير، يتوقع صدوره قريبًا في المتجر.</p>
+        </div>
     </div>
 
 </body>
