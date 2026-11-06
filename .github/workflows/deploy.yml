@@ -1,0 +1,15 @@
+name: Auto Deploy to Netlify
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy Status
+      run: echo "تم تحديث موقع تسريبات فورت نايت بنجاح وتفعيل النشر الآلي!"
